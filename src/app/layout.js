@@ -1,11 +1,11 @@
 import "./globals.css";
 import { cx } from "@/src/utils";
-import { Inter, Manrope } from "next/font/google";
+import { Inter, Manrope, Montserrat } from "next/font/google";
 import Header from "@/src/components/Header";
 import Footer from "../components/Footer";
 import siteMetadata from "../utils/siteMetaData";
 import Script from "next/script";
-import { ThemeProvider } from "@/src/components/ThemeProvider"; // NEW
+import { ThemeProvider } from "@/src/components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,8 +19,23 @@ const manrope = Manrope({
   variable: "--font-mr",
 });
 
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mont",
+});
+
+// FIXED: prevent error if siteMetadata.siteUrl is undefined or invalid
+let metadataBase;
+try {
+  metadataBase = new URL(siteMetadata.siteUrl);
+} catch (error) {
+  console.error("Invalid siteMetadata.siteUrl:", siteMetadata.siteUrl);
+  metadataBase = new URL("https://default-url.com"); // fallback URL
+}
+
 export const metadata = {
-  metadataBase: new URL(siteMetadata.siteUrl),
+  metadataBase,
   title: {
     template: `%s | ${siteMetadata.title}`,
     default: siteMetadata.title,
@@ -61,7 +76,8 @@ export default function RootLayout({ children }) {
         className={cx(
           inter.variable,
           manrope.variable,
-          "font-mr bg-light dark:bg-dark"
+          montserrat.variable,
+          "font-mont bg-light dark:bg-dark"
         )}
       >
         <ThemeProvider>

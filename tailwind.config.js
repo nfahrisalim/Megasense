@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,15 +10,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: "#1b1b1b",
-        light: "#fff",
-        accent: "#7B00D3",
-        accentDark: "#ffdb4d",
+        dark: "#015386",
+        light: "#f0f5f9",
+        accent: "#50bbf2",
+        accentDark: "#53c2ba",
         gray: "#747474",
+        primary: "#015386",
+        secondary: "#50bbf2",
+        tertiary: "#53c2ba",
       },
       fontFamily:{
-        mr: ["var(--font-mr)"],
-        in: ["var(--font-in)"]
+        mr: ["Montserrat", "sans-serif"],
+        in: ["Montserrat", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"]
       },
       animation:{
         roll: "roll 24s linear infinite"

@@ -43,9 +43,9 @@ const toggle = () =>{
           </div>
         </button>
 
-        <nav className=" w-max py-3 px-6 sm:px-8 border border-solid border-dark rounded-full font-medium capitalize  items-center flex  sm:hidden
-        fixed top-6 right-1/2 translate-x-1/2 bg-light/80 backdrop-blur-sm z-50
-        transition-all ease duration-300
+        <nav className=" w-max py-3 px-6 sm:px-8 border border-solid border-primary rounded-full font-medium capitalize  items-center flex  sm:hidden
+        fixed top-6 right-1/2 translate-x-1/2 bg-light/90 backdrop-blur-sm z-50
+        transition-all ease duration-300 shadow-lg
         "
         style={{
           top: click ? "1rem" : "-5rem"
@@ -67,8 +67,8 @@ const toggle = () =>{
         </nav>
 
 
-        <nav className=" w-max py-3 px-8 border border-solid border-dark rounded-full font-medium capitalize  items-center hidden sm:flex
-        fixed top-6 right-1/2 translate-x-1/2 bg-light/80 backdrop-blur-sm z-50">
+        <nav className=" w-max py-3 px-8 border border-solid border-primary rounded-full font-medium capitalize  items-center hidden sm:flex
+        fixed top-6 right-1/2 translate-x-1/2 bg-light/90 backdrop-blur-sm z-50 shadow-lg">
             <Link href="/" className="mr-2">Home</Link>
             <Link href="/about" className="mx-2">About</Link>
             <Link href="/contact" className="mx-2">Contact</Link>
